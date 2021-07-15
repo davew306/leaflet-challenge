@@ -79,8 +79,8 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
       .DomUtil
       .create("div", "info legend");
 
-    var grades = [0, 1, 2, 3, 4, 5];
-    var colors = [
+    var mag = [0, 1, 2, 3, 4, 5];
+    var color = [
       "#e6f2ff",
       "#b3d9ff",
       "#80bfff",
@@ -90,9 +90,9 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     ];
 
 
-    for (var i = 0; i < grades.length; i++) {
-      div.innerHTML += "<i style='background: " + colors[i] + "'></i> " +
-        grades[i] + (grades[i + 1] ? "&ndash;" + grades[i + 1] + "<br>" : "+");
+    for (var i = 0; i < mag.length; i++) {
+      div.innerHTML += "<i style='background: " + color[i] + "'></i> " +
+        mag[i] + (mag[i + 1] ? "&ndash;" + mag[i + 1] + "<br>" : "+");
     }
     return div;
   };
